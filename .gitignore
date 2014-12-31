@@ -1,0 +1,4 @@
+debian/detiste.debhelper.log
+debian/detiste.substvars
+debian/detiste/
+debian/files

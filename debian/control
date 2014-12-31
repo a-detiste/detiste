@@ -1,0 +1,14 @@
+Source: detiste
+Section: misc
+Priority: optional
+Maintainer: Alexandre Detiste <alexandre.detiste@gmail.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.6
+
+Package: detiste
+Depends: systemd-cron, ${misc:Depends}
+Architecture: all
+Multi-Arch: foreign
+Description: Shared settings between all home computers
+ Automatic configuration of local repositories 
+ and apt-cacher-ng proxy
