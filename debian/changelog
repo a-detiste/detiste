@@ -1,3 +1,9 @@
+detiste (2) testing; urgency=medium
+
+  * Add unattended-upgrades global overide
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Wed, 31 Dec 2014 14:33:24 +0100
+
 detiste (1) testing; urgency=medium
 
   * Initial release.

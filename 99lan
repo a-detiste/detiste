@@ -7,3 +7,9 @@ Acquire::http::Proxy
 	antec "DIRECT";
 }
 Acquire::Languages { "fr"; "en"; };
+
+Unattended-Upgrade::Origins-Pattern {
+        "o=Debian,a=testing";
+        "o=a_detiste";
+        "l=Google,a=stable";
+};
