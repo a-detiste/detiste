@@ -1,3 +1,9 @@
+detiste (3) testing; urgency=medium
+
+  * Add packageblacklist
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Fri, 02 Jan 2015 07:36:02 +0100
+
 detiste (2) testing; urgency=medium
 
   * Add unattended-upgrades global overide

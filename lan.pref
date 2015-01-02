@@ -1,0 +1,4 @@
+# this goes in /etc/apt/preferences.d/
+
+Package: irqbalance modemmanager
+Pin-Priority: -10

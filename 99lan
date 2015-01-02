@@ -13,3 +13,8 @@ Unattended-Upgrade::Origins-Pattern {
         "o=a_detiste";
         "l=Google,a=stable";
 };
+
+Unattended-Upgrade::Package-Blacklist {
+        "irqbalance";
+        "modemmanager";
+};
