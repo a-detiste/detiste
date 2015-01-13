@@ -1,3 +1,9 @@
+detiste (4) testing; urgency=medium
+
+  * Fix "DIRECT"/without proxy connection to 'antec'&'pi' apt repositories
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Tue, 13 Jan 2015 23:36:34 +0100
+
 detiste (3) testing; urgency=medium
 
   * Add packageblacklist
