@@ -1,6 +1,6 @@
 # this goes in /etc/apt/apt.conf.d/
 
-Acquire::http::Proxy "http://localhost:3142";
+Acquire::http::Proxy "http://antec:3142";
 Acquire::http::Proxy::pi "DIRECT";
 Acquire::http::Proxy::antec "DIRECT";
 Acquire::Languages { "fr"; "en"; };
