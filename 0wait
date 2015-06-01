@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# install this as /etc/cron.daily/0wait
+#
+# wait for local apt-cacher-ng proxy to come online
+# before starting unattended-upgrades
+# (that may well never happen before shutdown,
+# but can happen later on the same day)
+
+rollback()
+{
+        echo "0wait aborted"
+        touch -t 201401030000 /var/lib/systemd/timers/stamp-cron-daily.timer
+        sleep 1
+        killall run-parts
+        exit 0
+}
+
+trap "rollback" TERM INT QUIT HUP
+
+while true
+do
+        ping -qc 1 antec > /dev/null && exit 0
+        sleep 300
+done

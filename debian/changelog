@@ -1,4 +1,10 @@
-detiste (5) UNRELEASED; urgency=medium
+detiste (6) testing; urgency=medium
+
+  * ship /etc/cron.daily/0wait
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Mon, 25 May 2015 10:44:33 +0200
+
+detiste (5) testing; urgency=medium
 
   * fix proxy
 
