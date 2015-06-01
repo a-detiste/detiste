@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ -e /etc/apt/sources.list.d/getdeb.list ]
+then
+    new="deb http://archive.getdeb.net/ubuntu vivid-getdeb games"
+    old=$(cat /etc/apt/sources.list.d/getdeb.list)
+    if [ "$new" != "$old" ]
+    then
+        echo "$new" > /etc/apt/sources.list.d/getdeb.list
+    fi
+fi
+
+#DEBHELPER#

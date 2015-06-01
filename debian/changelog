@@ -1,3 +1,9 @@
+detiste (7) testing; urgency=medium
+
+  * update GetDeb.list if installed
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Mon, 01 Jun 2015 14:17:22 +0200
+
 detiste (6) testing; urgency=medium
 
   * ship /etc/cron.daily/0wait
