@@ -1,8 +1,9 @@
-detiste (9) UNRELEASED; urgency=medium
+detiste (9) testing; urgency=medium
 
   * ship cruft filters for repos
+  * aptitude forget-new
 
- -- Alexandre Detiste <alexandre.detiste@gmail.com>  Sat, 08 Aug 2015 09:39:04 +0200
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Sat, 23 Aug 2015 09:39:04 +0200
 
 detiste (8) testing; urgency=medium
 
