@@ -1,5 +1,5 @@
-detiste binary: package-install-apt-preferences etc/apt/preferences.d/
-detiste binary: package-install-apt-preferences etc/apt/preferences.d/lan.pref
-detiste binary: package-install-apt-sources etc/apt/sources.list.d/
-detiste binary: package-install-apt-sources etc/apt/sources.list.d/lan.list
+detiste binary: package-installs-apt-preferences etc/apt/preferences.d/
+detiste binary: package-installs-apt-preferences etc/apt/preferences.d/lan.pref
+detiste binary: package-installs-apt-sources etc/apt/sources.list.d/
+detiste binary: package-installs-apt-sources etc/apt/sources.list.d/lan.list
 
