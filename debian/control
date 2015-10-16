@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.6
 
 Package: detiste
-Depends: systemd-cron, ${misc:Depends}
+Depends: systemd-cron, libnotify-bin, ${misc:Depends}
 Architecture: all
 Multi-Arch: foreign
 Description: Shared settings between all home computers
