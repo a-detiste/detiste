@@ -1,3 +1,9 @@
+detiste (11) testing; urgency=medium
+
+  * GetDeb: switch to wily
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Sun, 06 Dec 2015 14:14:36 +0100
+
 detiste (10) testing; urgency=medium
 
   * depends on libnotify-bin used by zz_desktop_notification
