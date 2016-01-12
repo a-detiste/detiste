@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rm -rf /etc/cron.d/parenting
+
+#DEBHELPER#
