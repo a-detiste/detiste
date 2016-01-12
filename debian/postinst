@@ -11,4 +11,9 @@ then
     fi
 fi
 
+if [ "$(hostname)" = "wagner" ]
+then
+	cp /etc/site/parenting /etc/cron.d/
+fi
+
 #DEBHELPER#

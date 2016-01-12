@@ -6,9 +6,14 @@ Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.6
 
 Package: detiste
-Depends: systemd-cron, libnotify-bin, ${misc:Depends}
+Depends: systemd-cron, libnotify-bin, ${misc:Depends}, python3
+Suggests:
+# only on host 'wagner'
+ sqlite3
 Architecture: all
 Multi-Arch: foreign
 Description: Shared settings between all home computers
- Automatic configuration of local repositories,
- apt-cacher-ng proxy & standard cron-jobs.
+ Automatic configuration of:
+  * local repositories
+  * apt-cacher-ng proxy
+  * standard cron-jobs

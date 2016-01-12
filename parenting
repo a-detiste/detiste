@@ -1,0 +1,8 @@
+1,5,10,15,20,25,30,35,40,45,50,55 * * * * root /usr/sbin/history
+
+PERSISTENT=false
+30    20 * * 0-4 root echo "GO TO SLEEP" > /etc/nologin
+55-59 20 * * 0-4 root /usr/bin/beep
+0     21 * * 0-4 root /sbin/poweroff
+PERSISTENT=true
+0 8 * * * root rm /etc/nologin -f -v

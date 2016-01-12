@@ -7,4 +7,6 @@ install:
 	install -m755 -D 0wait    $(DESTDIR)/etc/cron.daily/0wait
 	install -m755 -D zz_clean $(DESTDIR)/etc/cron.daily/zz_clean
 	install -m755 -D zz_desktop_notification $(DESTDIR)/etc/cron.daily/zz_desktop_notification
+	install -m644 -D parenting $(DESTDIR)/etc/site/parenting
 	install -m644 -D detiste  $(DESTDIR)/usr/lib/cruft/filters-unex/detiste
+	install -m755 -D history  $(DESTDIR)/usr/sbin/history

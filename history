@@ -1,0 +1,50 @@
+#!/usr/bin/python3
+
+import os
+import subprocess
+
+subprocess.call(['cp', '/home/melanie/.config/google-chrome/Default/History', '/tmp/'])
+
+proc = subprocess.Popen(['sqlite3', '/tmp/History',
+                         "select datetime(last_visit_time/1000000-11644473600+7200,'unixepoch'),url,title "
+                         "from urls "
+                         "order by last_visit_time desc"],
+                         universal_newlines=True,
+                         stdout=subprocess.PIPE)
+
+count = 0
+
+html = open('/var/www/index.html', 'w')
+html.write('''
+<html>
+<head>
+  <title>Melanie</title>
+  <meta http-equiv="refresh" content="300">
+  <meta charset="UTF-8">
+</head>
+<body>
+<h2>Historique<h2>
+<table border=1>
+  <tr>
+    <td>Date</td>
+    <td>Url </td>
+    <td>Titre</td>
+  </tr>
+''')
+
+for line in proc.stdout:
+    count += 1
+    if count == 40:
+        break
+    line = line.rstrip()
+    #print(line)
+    date, url, name = line.split('|',2)
+    html.write('<tr>')
+    html.write('<td>' + date + '</td>')
+    html.write('<td><a href="' + url + '">' + url[0:50] + '</a></td>')
+    html.write('<td>' + name + '</td>')
+    html.write('</tr>\n')
+
+
+html.write('</table></body></html>')
+html.close()
