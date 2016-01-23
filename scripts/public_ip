@@ -1,0 +1,5 @@
+#!/bin/sh
+#exec wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
+#exec lynx -dump -auth=admin:XXXXXX http://router/enatherstatus.html | grep "IP Address" | awk '{print $3}'
+exec curl icanhazip.com
+

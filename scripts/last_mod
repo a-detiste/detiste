@@ -1,0 +1,13 @@
+#!/bin/sh
+echo ROOT:
+find / -xdev -mmin -5 -ls
+if grep -qs '/var ' /proc/mounts
+then
+	echo VAR:
+	find /var -xdev -mmin -5 -ls
+fi
+if grep -qs '/home ' /proc/mounts
+then
+	echo HOME:
+	exec find /home -xdev -mmin -5 -ls
+fi

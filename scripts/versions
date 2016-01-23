@@ -1,0 +1,14 @@
+#!/bin/sh
+egrep '^deb.*unstable' /etc/apt/sources.list -qs || exit 1
+
+if egrep '^deb.*experimental' /etc/apt/sources.list -qs
+then
+	echo "EXPERIMENTAL:"
+	aptitude search '?narrow(?installed, ?archive(experimental))'
+	#echo "UPGREADABLE TO EXPERIMENTAL:"
+	#aptitude search '?and(?narrow(?installed, !?archive(experimental)), ?archive(experimental))'
+fi
+echo "NOT YET IN TESTING:"
+aptitude search '?narrow(?installed, ?archive(unstable) !?archive(testing))'
+echo "UPGREADABLE TO UNSTABLE:"
+exec aptitude search '?narrow(?installed, ?archive(testing) !?archive(unstable))'
