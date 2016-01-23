@@ -25,14 +25,13 @@ for a in $updated; do
 	if [[ $a == *grub* ]]; then grub="$grub $a"; fi
 	if [[ $a == *systemd* ]]; then systemd="$systemd $a"; fi
 	if [[ $a == *dbus* ]]; then dbus="$dbus $a"; fi
-	if [[ $a == *kdm* ]]; then kdm="$radeon $a"; fi
 	if [[ $a == *radeon* ]]; then radeon="$radeon $a"; fi
 	if [[ $a == *mesa* ]]; then mesa="$mesa $a"; fi
 done;
 
 users=$(loginctl list-sessions | grep seat0 | grep -v sddm | awk '{print $3}')
 
-if [ -e /var/run/reboot-required -o -n "$grub" -o -n "$dbus" -o -n "$systemd" -o -n "$kdm" -o -n "$radeon" -o -n "$mesa" ]
+if [ -e /var/run/reboot-required -o -n "$grub" -o -n "$dbus" -o -n "$systemd" -o -n "$radeon" -o -n "$mesa" ]
 then
 	# check if user is active
 	if [ -n "$users" ]
@@ -40,7 +39,6 @@ then
 		echo grub:$grub
 		echo systemd:$systemd
 		echo dbus:$dbus
-		echo kdm:$kdm
 		echo radeon:$radeon
 		echo mesa:$mesa
 		echo "user(s) active:"
