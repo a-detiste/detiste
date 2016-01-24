@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ "$1" -eq "$1" ] 2>/dev/null
+then
+	exec x-www-browser https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=$1
+else
+	kdialog --error "Please specify a valid bug number" --title="$0"
+fi
