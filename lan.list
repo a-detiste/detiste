@@ -2,7 +2,7 @@
 
 # these are the little bits,
 # also mirrored on users.skynet.be
-deb http://pi/repos/ jessie main
+deb http://pi/repos/ stretch main
 
 # private stuff, not mirrored
 # ???

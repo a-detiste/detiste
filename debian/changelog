@@ -1,3 +1,9 @@
+detiste (15) testing; urgency=medium
+
+  * switch to stretch codename
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Tue, 26 Jan 2016 09:36:48 +0100
+
 detiste (14) testing; urgency=medium
 
   * add cruft & postrm for parenting
