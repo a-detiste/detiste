@@ -1,3 +1,10 @@
+detiste (16) testing; urgency=medium
+
+  * nail down Alsa lib that currently works with Steam
+  * add new script "up"
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Sat, 06 Feb 2016 10:49:48 +0100
+
 detiste (15) testing; urgency=medium
 
   * switch to stretch codename

@@ -6,7 +6,8 @@ Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.6
 
 Package: detiste
-Depends: systemd-cron, libnotify-bin, ${misc:Depends}, python3
+Depends: systemd-cron, libnotify-bin, ${misc:Depends}, python3,
+  libasound2 (= 1.0.29-1)
 Suggests:
 # only on host 'wagner'
  sqlite3
