@@ -10,10 +10,10 @@
 
 [ -e /var/log/unattended-upgrades/unattended-upgrades.log ] || exit 0
 
-line=$(cat /var/log/unattended-upgrades/unattended-upgrades.log | grep "will be upgraded" | tail -n 1)
+line=$(cat /var/log/unattended-upgrades/unattended-upgrades.log | grep -e "will be upgraded" -e "mis à niveau" | tail -n 1)
 if [ -z "$line" -a -e /var/log/unattended-upgrades/unattended-upgrades.log.1.gz ]
 then
-	line=$(zcat /var/log/unattended-upgrades/unattended-upgrades.log.1.gz | grep "will be upgraded" | tail -n 1)
+	line=$(zcat /var/log/unattended-upgrades/unattended-upgrades.log.1.gz | grep -e "will be upgraded" -e "mis à niveau" | tail -n 1)
 fi
 
 updated=$(echo $line | grep ^$(date +%Y-%m-%d) | cut -d: -f4)
@@ -31,7 +31,7 @@ done;
 
 users=$(loginctl list-sessions | grep seat0 | grep -v sddm | awk '{print $3}')
 
-if [ -e /var/run/reboot-required -o -n "$grub" -o -n "$dbus" -o -n "$systemd" -o -n "$radeon" -o -n "$mesa" ]
+if [ -e /var/run/reboot-required -o -n "$grub" -o -n "$systemd" -o -n "$dbus" -o -n "$radeon" -o -n "$mesa" ]
 then
 	# check if user is active
 	if [ -n "$users" ]
