@@ -1,3 +1,9 @@
+detiste (19) testing; urgency=medium
+
+  * nail down _all_ Alsa packages
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Tue, 08 Mar 2016 18:16:15 +0100
+
 detiste (18) testing; urgency=medium
 
   * Ship mp3+photos rsync cron job for Wagner host
