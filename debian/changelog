@@ -1,3 +1,9 @@
+detiste (20) testing; urgency=medium
+
+  * release Alsa 1.1
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Tue, 05 Apr 2016 10:22:01 +0200
+
 detiste (19) testing; urgency=medium
 
   * nail down _all_ Alsa packages
