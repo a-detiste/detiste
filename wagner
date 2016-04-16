@@ -6,6 +6,9 @@
 
 # main host is called Antec: that's the brand off the case
 
+# shared with apt-daily.{timer|service}
+/etc/site/0wait
+
 # is it still up ?
 ping -qc 1 antec > /dev/null || exit 0
 rsync -rlpgotDixv -e ssh melanie@antec:/home/mp3 /home/ --delete --inplace
