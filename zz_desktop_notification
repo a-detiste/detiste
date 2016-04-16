@@ -1,12 +1,13 @@
 #!/bin/bash
 #
 # this is a sample script that show a desktop notification
-# when your cron.daily job is done
+# when your apt-daily.service job is done
 #
 # a better GUI to systemd timers (like the KDE Weather/Calendar applet)
 # would be better
 #
-# you should put this in /etc/cron.daily/
+# you should call this from a systemd drop-in configuration file
+# that extends apt-daily.service with a ExecStartPost= stanza.
 
 [ -e /var/log/unattended-upgrades/unattended-upgrades.log ] || exit 0
 
@@ -72,7 +73,7 @@ else
 	    else
 		for user in "$users"
 		do
-			su $user -c "notify-send 'cron-daily finished' -i dialog-information 'nothing to update today'"
+			su $user -c "notify-send 'apt-daily finished' -i dialog-information 'nothing to update today'"
 		done
 	    fi
 	fi
