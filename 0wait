@@ -1,7 +1,5 @@
 #!/bin/bash
 #
-# install this as /etc/cron.daily/0wait
-#
 # wait for local apt-cacher-ng proxy to come online
 # before starting unattended-upgrades
 # (that may well never happen before shutdown,
@@ -18,8 +16,7 @@ rollback()
 
 trap "rollback" TERM INT QUIT HUP
 
-while true
+while ! ping -qc 1 antec > /dev/null
 do
-        ping -qc 1 antec > /dev/null && exit 0
         sleep 300
 done
