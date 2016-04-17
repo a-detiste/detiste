@@ -1,6 +1,7 @@
 detiste (23) testing; urgency=medium
 
   * Enable unattended-upgrades on all hosts
+  * Use "dpkg-maintscript-helper rm_conffile"
 
  -- Alexandre Detiste <alexandre.detiste@gmail.com>  Sun, 17 Apr 2016 10:59:49 +0200
 

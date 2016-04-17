@@ -3,9 +3,9 @@ set -e
 
 # remove obsolete conf files,
 # these jobs are now stored in /etc/site/
-rm -f /etc/cron.daily/0wait
-rm -f /etc/cron.daily/zz_clean
-rm -f /etc/cron.daily/zz_desktop_notification
+dpkg-maintscript-helper rm_conffile /etc/cron.daily/0wait 23 -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/cron.daily/zz_clean 23 -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/cron.daily/zz_desktop_notification 23 -- "$@"
 
 if [ -e /etc/apt/sources.list.d/getdeb.list ]
 then
