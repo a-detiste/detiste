@@ -7,11 +7,11 @@ Acquire::Languages { "fr"; "en"; };
 
 # unattended-upgrades
 APT::Periodic::Enable "1";
-APT::Periodic::Unattended-Upgrade "1";
+APT::Periodic::RandomSleep "0";
 APT::Periodic::Update-Package-Lists "1";
 APT::Periodic::Download-Upgradeable-Packages "1";
+APT::Periodic::Unattended-Upgrade "1";
 APT::Periodic::AutocleanInterval "1";
-APT::Periodic::RandomSleep "0";
 
 Unattended-Upgrade::Origins-Pattern {
         "o=Debian,a=testing";
