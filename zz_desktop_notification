@@ -12,9 +12,19 @@
 [ -e /var/log/unattended-upgrades/unattended-upgrades.log ] || exit 0
 
 line=$(cat /var/log/unattended-upgrades/unattended-upgrades.log | grep -e "will be upgraded" -e "mis à niveau" | tail -n 1)
+hour=$(tail -n 1 /var/log/unattended-upgrades/unattended-upgrades.log | cut -d' ' -f 2)
 if [ -z "$line" -a -e /var/log/unattended-upgrades/unattended-upgrades.log.1.gz ]
 then
 	line=$(zcat /var/log/unattended-upgrades/unattended-upgrades.log.1.gz | grep -e "will be upgraded" -e "mis à niveau" | tail -n 1)
+	hour=$(zcat /var/log/unattended-upgrades/unattended-upgrades.log.1.gz | tail -n 1 | cut -d' ' -f 2)
+fi
+
+# apt-daily.service is called twice a day
+# avoid extraneous notifications on second run
+end=$(date --date="$hour" +%s)
+now=$(date +%s)
+if [ "$now" -gt "$(echo $end + 100 | bc)"  ]; then
+	exit
 fi
 
 updated=$(echo $line | grep ^$(date +%Y-%m-%d) | cut -d: -f4)
