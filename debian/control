@@ -9,6 +9,7 @@ Package: detiste
 Depends:
  systemd-cron,
  python3,
+ bc,
  libnotify-bin,
  unattended-upgrades,
  ${misc:Depends},
