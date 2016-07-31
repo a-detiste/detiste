@@ -1,5 +1,9 @@
 # cruft-common add-on
 #
 # this goes in /usr/lib/cruft/filters-unex/
+/home/clips
+/home/cover
+/home/mp3
+/home/photos
 /etc/apt/sources.list.d/getdeb.list
 /etc/cron.d/parenting
