@@ -4,7 +4,7 @@
 # of my neighbour who donated the computer case
 [ "$(hostname)" = "wagner" ] || exit 0
 
-# main host is called Antec: that's the brand off the case
+# main host is called Antec: that's the brand of the case
 
 # shared with apt-daily.{timer|service}
 /etc/site/0wait
@@ -16,3 +16,7 @@ rsync -rlpgotDixv -e ssh melanie@antec:/home/mp3 /home/ --delete --inplace
 # is it still up ?
 ping -qc 1 antec > /dev/null || exit 0
 rsync -rlpgotDixv -e ssh melanie@antec:/home/photos /home/ --delete --inplace
+
+# is it still up ?
+ping -qc 1 antec > /dev/null || exit 0
+rsync -rlpgotDixv -e ssh melanie@antec:/home/cover /home/ --delete --inplace

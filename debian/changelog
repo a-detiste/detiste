@@ -1,3 +1,9 @@
+detiste (25) testing; urgency=medium
+
+  * Also sync CD covers
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Sun, 31 Jul 2016 20:37:00 +0200
+
 detiste (24) testing; urgency=medium
 
   * Only show notification once a day (apt-daily.service may run twice).
