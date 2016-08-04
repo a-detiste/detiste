@@ -1,0 +1,9 @@
+99lan                   /etc/apt/apt.conf.d
+lan.pref                /etc/apt/preferences.d
+lan.list                /etc/apt/sources.list.d
+0wait                   /etc/site
+zz_desktop_notification /etc/site
+detiste.conf            /etc/systemd/system/apt-daily.service.d
+scripts/*               /usr/bin
+detiste                 /usr/lib/cruft/filters-unex
+history                 /usr/sbin

@@ -1,0 +1,3 @@
+wagner/parenting         /etc/cron.d
+wagner/wagner            /etc/cron.daily
+wagner/no_incognito.json /etc/opt/chrome/policies/managed

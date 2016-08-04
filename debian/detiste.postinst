@@ -7,6 +7,8 @@ dpkg-maintscript-helper rm_conffile /etc/cron.daily/0wait 23 -- "$@"
 dpkg-maintscript-helper rm_conffile /etc/cron.daily/zz_clean 23 -- "$@"
 dpkg-maintscript-helper rm_conffile /etc/cron.daily/zz_desktop_notification 23 -- "$@"
 
+dpkg-maintscript-helper rm_conffile /etc/site/parenting 25 -- "$@"
+
 if [ -e /etc/apt/sources.list.d/getdeb.list ]
 then
     new="deb http://archive.getdeb.net/ubuntu wily-getdeb games"
@@ -19,7 +21,8 @@ fi
 
 if [ "$(hostname)" = "wagner" ]
 then
-	cp /etc/site/parenting /etc/cron.d/
+	# ugly
+	systemd-run bash -c 'sleep 100; apt-get install wagner -y'
 fi
 
 #DEBHELPER#

@@ -1,8 +1,10 @@
 detiste (25) testing; urgency=medium
 
   * Also sync CD covers
+  * Split out wagner specific settings in new 'wagner' package
+  * Add Google Chrome policy for 'wagner' package
 
- -- Alexandre Detiste <alexandre.detiste@gmail.com>  Sun, 31 Jul 2016 20:37:00 +0200
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Thu, 04 Aug 2016 11:59:42 +0200
 
 detiste (24) testing; urgency=medium
 

@@ -12,10 +12,8 @@ Depends:
  bc,
  libnotify-bin,
  unattended-upgrades,
+ sqlite3,
  ${misc:Depends},
-Suggests:
-# only on host 'wagner'
- sqlite3
 Architecture: all
 Multi-Arch: foreign
 Description: Shared settings between all home computers
@@ -24,3 +22,15 @@ Description: Shared settings between all home computers
   * apt-cacher-ng proxy
   * unattended-upgrades
   * standard cron-jobs
+
+Package: wagner
+Depends:
+ detiste,
+ ${misc:Depends},
+Architecture: all
+Multi-Arch: foreign
+Description: extra settings only applicable for the 'wagner' host
+ Automatic configuration of:
+  * automatic shutdown at 21h00
+  * Google Chrome policy that disables incognito mode
+  * replication of mp3 & their covers
