@@ -30,7 +30,8 @@ Depends:
 Architecture: all
 Multi-Arch: foreign
 Description: extra settings only applicable for the 'wagner' host
-  * automaticaly purge all non needed packages
+ This includes:
+  * automatically purge all non needed packages
   * automatic shutdown at 21h00
   * Google Chrome policy that disables incognito mode
   * replication of mp3 & their covers
