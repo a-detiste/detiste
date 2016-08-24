@@ -3,3 +3,6 @@ debian/detiste.debhelper.log
 debian/detiste.substvars
 debian/detiste/
 debian/files
+debian/wagner.debhelper.log
+debian/wagner.substvars
+debian/wagner/
