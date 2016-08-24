@@ -1,3 +1,15 @@
+detiste (28) testing; urgency=medium
+
+  * only trigger installation of "wagner" if it's not yet installed
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Wed, 24 Aug 2016 13:04:11 +0200
+
+detiste (27) testing; urgency=medium
+
+  * ship logind.conf configlet
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Wed, 24 Aug 2016 12:47:31 +0200
+
 detiste (26) testing; urgency=medium
 
   * add /etc/apt/apt.conf.d/99local to 'wagner' package
