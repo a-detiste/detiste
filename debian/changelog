@@ -1,3 +1,9 @@
+detiste (26) testing; urgency=medium
+
+  * add /etc/apt/apt.conf.d/99local to 'wagner' package
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Wed, 24 Aug 2016 11:24:29 +0200
+
 detiste (25) testing; urgency=medium
 
   * Also sync CD covers

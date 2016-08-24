@@ -1,0 +1,6 @@
+# this goes in /etc/apt/apt.conf.d/
+
+Acquire::Languages { "en"; };
+APT::Get::Purge "true";
+Aptitude::Purge-Unused "true";
+Unattended-Upgrade::Remove-Unused-Dependencies "true";
