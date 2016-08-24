@@ -21,8 +21,14 @@ fi
 
 if [ "$(hostname)" = "wagner" ]
 then
+    if [ $(dpkg-query --show --showformat 'true' wagner 2>/dev/null) ]
+    then
+        echo "package 'wagner' is already installed"
+    else
+        echo "scheduling installation of 'wagner' package"
 	# ugly
 	systemd-run bash -c 'sleep 100; apt-get install wagner -y'
+    fi
 fi
 
 #DEBHELPER#
