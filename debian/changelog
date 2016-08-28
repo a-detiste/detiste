@@ -1,8 +1,8 @@
-detiste (29) UNRELEASED; urgency=medium
+detiste (29) testing; urgency=medium
 
   * re-enable emails for host Wagner
 
- -- Alexandre Detiste <alexandre.detiste@gmail.com>  Sun, 28 Aug 2016 10:19:25 +0200
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Sun, 28 Aug 2016 11:11:00 +0200
 
 detiste (28) testing; urgency=medium
 
