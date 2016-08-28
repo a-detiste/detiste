@@ -1,3 +1,9 @@
+detiste (29) UNRELEASED; urgency=medium
+
+  * re-enable emails for host Wagner
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Sun, 28 Aug 2016 10:19:25 +0200
+
 detiste (28) testing; urgency=medium
 
   * only trigger installation of "wagner" if it's not yet installed

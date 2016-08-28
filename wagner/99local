@@ -4,3 +4,4 @@ Acquire::Languages { "en"; };
 APT::Get::Purge "true";
 Aptitude::Purge-Unused "true";
 Unattended-Upgrade::Remove-Unused-Dependencies "true";
+Unattended-Upgrade::Mail "root";
