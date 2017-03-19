@@ -1,3 +1,10 @@
+detiste (30) testing; urgency=medium
+
+  * add /usr/bin/obsolete
+  * quick & dirty backup of 'Wagner' host
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Sun, 19 Mar 2017 15:25:23 +0100
+
 detiste (29) testing; urgency=medium
 
   * re-enable emails for host Wagner
