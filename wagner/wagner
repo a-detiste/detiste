@@ -6,6 +6,8 @@
 
 # main host is called Antec: that's the brand of the case
 
+/usr/bin/duplicate_downloads melanie > /dev/null
+
 # ensure that files are correclty owned before syncing
 find /home/melanie/* ! -user  melanie -ls -exec chown -h melanie {} \;
 find /home/melanie/* ! -group detiste -ls -exec chgrp -h detiste {} \;
