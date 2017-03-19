@@ -1,0 +1,36 @@
+#!/usr/bin/python3
+import os
+import sys
+import hashlib
+
+if len(sys.argv) == 1:
+    exit('Usage %s user1 <user2> <user3> <...>' % sys.argv[0])
+
+for user in sys.argv[1:]:
+    DOWNLOADS='/home/%s/Downloads' % user
+    if not os.path.exists(DOWNLOADS):
+        exit("%s doesn't exist !!!" % DOWNLOADS)
+
+    for dirpath, dirnames, filenames in os.walk(DOWNLOADS):
+      for fn in filenames:
+        if ' (' not in fn or ').' not in fn:
+            continue
+        dupl_file = os.path.join(dirpath, fn)
+        ver_s = dupl_file[dupl_file.find(' (')+2:dupl_file.find(').')]
+        try:
+            ver_i = int(ver_s)
+        except ValueError:
+            continue
+        orig_file = dupl_file[0:dupl_file.find(' (')] + os.path.splitext(dupl_file)[1]
+        if not os.path.exists(orig_file):
+            continue
+
+        if (hashlib.md5(open(dupl_file, 'rb').read()).hexdigest()
+         != hashlib.md5(open(orig_file, 'rb').read()).hexdigest()):
+            print(dupl_file)
+            print('and')
+            print(orig_file)
+            print('... are different, keeping\n')
+        else:
+            print('deleting %s.\n' % dupl_file)
+            os.unlink(dupl_file)
