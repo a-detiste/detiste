@@ -1,3 +1,9 @@
+detiste (31) testing; urgency=medium
+
+  * basic mp3 pump wagner -> antec
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Sun, 19 Mar 2017 16:14:58 +0100
+
 detiste (30) testing; urgency=medium
 
   * add /usr/bin/obsolete
