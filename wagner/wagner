@@ -6,8 +6,15 @@
 
 # main host is called Antec: that's the brand of the case
 
+# ensure that files are correclty owned before syncing
+find /home/melanie/ ! -user  melanie -ls -exec chown -h melanie {} \;
+find /home/melanie/* ! -group detiste -ls -exec chgrp -h detiste {} \;
+
 # shared with apt-daily.{timer|service}
 /etc/site/0wait
+
+# quick & dirty backup
+rsync -rlpgotDixv -e ssh /home/melanie/* melanie@antec:/home/melanie/wagner --delete --inplace
 
 # is it still up ?
 ping -qc 1 antec > /dev/null || exit 0
