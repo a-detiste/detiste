@@ -27,7 +27,7 @@ then
     else
         echo "scheduling installation of 'wagner' package"
 	# ugly
-	systemd-run bash -c 'sleep 100; apt-get install wagner -y'
+	systemd-run bash -c 'sleep 100; apt update; apt-get install wagner -y'
     fi
 fi
 
