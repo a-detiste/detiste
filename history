@@ -1,9 +1,16 @@
 #!/usr/bin/python3
 
 import os
+import sys
 import subprocess
 
-subprocess.call(['cp', '/home/melanie/.config/google-chrome/Default/History', '/tmp/'])
+if len(sys.argv) > 1:
+  user = sys.argv[1]
+else:
+  user = {'antec': 'julie',
+          'wagner': 'melanie'}.get(os.uname()[1])
+
+subprocess.check_call(['cp', '/home/%s/.config/google-chrome/Default/History' % user, '/tmp/'])
 
 proc = subprocess.Popen(['sqlite3', '/tmp/History',
                          "select datetime(last_visit_time/1000000-11644473600+7200,'unixepoch'),url,title "
@@ -14,23 +21,23 @@ proc = subprocess.Popen(['sqlite3', '/tmp/History',
 
 count = 0
 
-html = open('/var/www/index.html', 'w')
+html = open('/var/www/html/index.html', 'w')
 html.write('''
 <html>
 <head>
-  <title>Melanie</title>
+  <title>%s</title>
   <meta http-equiv="refresh" content="300">
   <meta charset="UTF-8">
 </head>
 <body>
-<h2>Historique<h2>
+<h2>%s<h2>
 <table border=1>
   <tr>
     <td>Date</td>
     <td>Url </td>
     <td>Titre</td>
   </tr>
-''')
+''' % (user.title(), user.title()))
 
 for line in proc.stdout:
     count += 1
