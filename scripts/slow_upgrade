@@ -1,0 +1,66 @@
+#!/usr/bin/python3
+
+# use this when size(packages_to_download) > size(tmpfs)
+
+import os
+import subprocess
+
+if os.geteuid() != 0:
+    exit('You must run this script as root.')
+
+wanted = set(subprocess.check_output(['apt-mark', 'showmanual'],
+                                     universal_newlines=True).splitlines())
+def list_upgradeable():
+    result = set()
+    for line in subprocess.check_output(['apt', 'list', '--upgradeable'],
+                                         universal_newlines=True,
+                                         stderr=subprocess.DEVNULL).splitlines():
+        if '/' in line:
+            pkg = line.split('/')[0]
+            result.add(pkg)
+    return result
+upgradeable = list_upgradeable()
+
+upgrade = wanted.intersection(upgradeable)
+print('To upgrade:', upgrade, '\n')
+
+failed = set()
+while upgrade:
+  package = upgrade.pop()
+  print('PACKAGE:', package)
+
+  # check if pkg hasn't been upgraded by a depedency
+  installed = None
+  candidate = None
+  for line in subprocess.check_output(['apt', 'policy', package],
+                                      universal_newlines=True,
+                                      stderr=subprocess.DEVNULL,
+                                      env={'LANG': 'C'}).splitlines():
+     if 'Candidate:' in line:
+         candidate = line.split()[-1]
+     if 'Installed:' in line:
+         installed = line.split()[-1]
+
+  if installed == candidate:
+     print('... has already been upgraded')
+     continue
+
+  try:
+      subprocess.check_call(['apt', 'install', '-y', '-d', package])
+      subprocess.check_call(['apt', 'install', package])
+      # reclaim tmpfs
+      subprocess.check_call(['apt', 'clean'])
+  except subprocess.CalledProcessError:
+      failed.add(package)
+
+if failed:
+    print('\nFAILED UPGRADES:', ' '.join(failed))
+
+print('\nAUTOREMOVE:')
+subprocess.call(['apt', 'autoremove'])
+
+upgradeable = list_upgradeable() - failed
+if upgradeable:
+    print('\nUPGRADING LIBRARIES:', ' '.join(upgradeable), '\n')
+    subprocess.call(['apt', 'upgrade'])
+    subprocess.call(['apt', 'clean'])

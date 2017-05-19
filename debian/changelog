@@ -1,6 +1,7 @@
-detiste (32) UNRELEASED; urgency=medium
+detiste (32) testing; urgency=medium
 
   * run duplicate_downloads on Wagner
+  * add slow_upgrade tool for EeePC and other seldom used computers
 
  -- Alexandre Detiste <alexandre.detiste@gmail.com>  Sun, 19 Mar 2017 16:28:02 +0100
 
