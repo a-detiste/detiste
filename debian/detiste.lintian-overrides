@@ -2,4 +2,3 @@ package-installs-apt-preferences etc/apt/preferences.d/
 package-installs-apt-preferences etc/apt/preferences.d/lan.pref
 package-installs-apt-sources etc/apt/sources.list.d/
 package-installs-apt-sources etc/apt/sources.list.d/lan.list
-binary-without-manpage

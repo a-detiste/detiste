@@ -1,3 +1,9 @@
+detiste (34) testing; urgency=medium
+
+  * split common files in detiste-common, provide RaspberryPi package
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Mon, 05 Jun 2017 13:10:58 +0200
+
 detiste (33) testing; urgency=medium
 
   * update GetDeb to Zesty

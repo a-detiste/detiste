@@ -7,21 +7,46 @@ Standards-Version: 3.9.8
 
 Package: detiste
 Depends:
- systemd-cron,
- python3,
+ detiste-common,
  bc,
  libnotify-bin,
- unattended-upgrades,
  sqlite3,
  ${misc:Depends},
 Architecture: all
 Multi-Arch: foreign
-Description: Shared settings between all home computers
+Description: Shared settings between all desktop computers
  Automatic configuration of:
   * local repositories
   * apt-cacher-ng proxy
   * unattended-upgrades
   * standard cron-jobs
+
+Package: detiste-raspberrypi
+Depends:
+ detiste-common,
+ python,
+ python-rpi.gpio,
+ ${misc:Depends},
+Suggests:
+ python3-rpi.gpio
+Architecture: all
+Multi-Arch: foreign
+Description: settings for RaspberryPI
+ This includes:
+ * GPIO script
+
+Package: detiste-common
+Depends:
+ python3,
+ systemd-cron,
+ unattended-upgrades,
+ ${misc:Depends},
+Breaks: detiste (<< 34)
+Replaces: detiste (<< 34)
+Architecture: all
+Multi-Arch: foreign
+Description: scripts shared across all hosts
+ This install scripts in /usr/bin/ & /usr/sbin/
 
 Package: wagner
 Depends:

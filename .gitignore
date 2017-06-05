@@ -2,6 +2,12 @@ debian/debhelper-build-stamp
 debian/detiste.debhelper.log
 debian/detiste.substvars
 debian/detiste/
+debian/detiste-common.debhelper.log
+debian/detiste-common.substvars
+debian/detiste-common/
+debian/detiste-raspberrypi.debhelper.log
+debian/detiste-raspberrypi.substvars
+debian/detiste-raspberrypi/
 debian/files
 debian/wagner.debhelper.log
 debian/wagner.substvars

@@ -1,6 +1,0 @@
-#!/bin/sh
-apt-get clean
-
-if [ ! -x /usr/bin/aptitude ]; then exit 0; fi
-if [ "$(hostname)" = "antec" ]; then exit 0; fi
-aptitude forget-new
