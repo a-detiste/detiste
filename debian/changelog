@@ -1,9 +1,10 @@
-detiste (35) UNRELEASED; urgency=medium
+detiste (35) testing; urgency=medium
 
   * fix bin/up for new network layout
   * move RPi APT repos definition to detiste-common
+  * add CertBot handler to RPi package
 
- -- Alexandre Detiste <alexandre.detiste@gmail.com>  Mon, 05 Jun 2017 13:21:34 +0200
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Mon, 05 Jun 2017 13:42:35 +0200
 
 detiste (34) testing; urgency=medium
 

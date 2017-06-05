@@ -24,6 +24,9 @@ Description: Shared settings between all desktop computers
 Package: detiste-raspberrypi
 Depends:
  detiste-common,
+ python3,
+ certbot,
+ shellinabox,
  python,
  python-rpi.gpio,
  ${misc:Depends},
@@ -34,6 +37,7 @@ Multi-Arch: foreign
 Description: settings for RaspberryPI
  This includes:
  * GPIO script
+ * glue for Certbot to ShellInABox certificate replication
 
 Package: detiste-common
 Depends:
