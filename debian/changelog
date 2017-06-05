@@ -1,6 +1,7 @@
 detiste (35) UNRELEASED; urgency=medium
 
   * fix bin/up for new network layout
+  * move RPi APT repos definition to detiste-common
 
  -- Alexandre Detiste <alexandre.detiste@gmail.com>  Mon, 05 Jun 2017 13:21:34 +0200
 

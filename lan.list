@@ -1,11 +1,5 @@
 # this goes in /etc/apt/sources.list.d/
 
-# these are the little bits,
-# also mirrored on users.skynet.be
-deb http://pi/repos/ stretch main
-
 # private stuff, not mirrored
-# ???
-
 # (big) non-free games, not mirrored
 deb http://antec/repos/ jessie main

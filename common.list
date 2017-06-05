@@ -1,0 +1,5 @@
+# this goes in /etc/apt/sources.list.d/
+
+# these are the little bits,
+# also mirrored on users.skynet.be
+deb http://pi/repos/ stretch main
