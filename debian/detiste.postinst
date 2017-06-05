@@ -11,7 +11,7 @@ dpkg-maintscript-helper rm_conffile /etc/site/parenting 25 -- "$@"
 
 if [ -e /etc/apt/sources.list.d/getdeb.list ]
 then
-    new="deb http://archive.getdeb.net/ubuntu wily-getdeb games"
+    new="deb http://archive.getdeb.net/ubuntu zesty-getdeb games"
     old=$(cat /etc/apt/sources.list.d/getdeb.list)
     if [ "$new" != "$old" ]
     then
