@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ "$(hostname)" = "antec" ]
+then
+    echo 'http://antec:3142'
+elif nc -zw1 antec 80
+then
+    echo 'http://antec:3142'
+else
+    echo 'DIRECT'
+fi
