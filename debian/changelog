@@ -1,9 +1,9 @@
-detiste (36) UNRELEASED; urgency=medium
+detiste (36) testing; urgency=medium
 
   * handle split of APT daily timers/services
   * implement APT proxy autodetection
 
- -- Alexandre Detiste <alexandre.detiste@gmail.com>  Mon, 12 Jun 2017 22:50:55 +0200
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Mon, 12 Jun 2017 22:59:28 +0200
 
 detiste (35) testing; urgency=medium
 
