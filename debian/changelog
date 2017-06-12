@@ -1,3 +1,9 @@
+detiste (36) UNRELEASED; urgency=medium
+
+  * handle split of APT daily timers/services
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Mon, 12 Jun 2017 22:50:55 +0200
+
 detiste (35) testing; urgency=medium
 
   * fix bin/up for new network layout

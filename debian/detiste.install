@@ -3,4 +3,5 @@ lan.pref                /etc/apt/preferences.d
 lan.list                /etc/apt/sources.list.d
 logind.conf             /etc/systemd/logind.conf.d
 detiste.conf            /etc/systemd/system/apt-daily.service.d
+notification.conf       /etc/systemd/system/apt-daily-upgrade.service.d
 detiste                 /usr/lib/cruft/filters-unex
