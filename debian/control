@@ -29,6 +29,7 @@ Depends:
  shellinabox,
  python,
  python-rpi.gpio,
+ lighttpd,
  ${misc:Depends},
 Suggests:
  python3-rpi.gpio
@@ -38,6 +39,7 @@ Description: settings for RaspberryPI
  This includes:
  * GPIO script
  * glue for Certbot to ShellInABox certificate replication
+ * http server with CGI scripts
 
 Package: detiste-common
 Depends:

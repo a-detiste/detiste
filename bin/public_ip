@@ -6,5 +6,7 @@ then
 	exit 0
 fi
 
+exec curl -s http://ssh.detiste.be/cgi-bin/my_ip.sh
+
 #exec wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
 exec curl -s icanhazip.com
