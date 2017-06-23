@@ -1,3 +1,4 @@
+debian/.debhelper/
 debian/debhelper-build-stamp
 debian/detiste.debhelper.log
 debian/detiste.substvars
