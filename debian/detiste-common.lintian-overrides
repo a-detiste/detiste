@@ -1,3 +1,2 @@
-detiste-common: package-installs-apt-sources etc/apt/sources.list.d/
 detiste-common: package-installs-apt-sources etc/apt/sources.list.d/common.list
 binary-without-manpage
