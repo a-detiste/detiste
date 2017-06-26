@@ -11,6 +11,7 @@ if len(sys.argv) > 1:
   user = sys.argv[1]
 else:
     # w / who / users are missing info (wtmp/utmp bug ?)
+    # -> bug in SDDM https://bugs.mageia.org/show_bug.cgi?id=18032
     #active_users = set(subprocess.check_output(['users'], universal_newlines=True).split())
     active_users = set()
     for user in subprocess.check_output(['loginctl', '--no-legend', 'list-users'],
