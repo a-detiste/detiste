@@ -4,11 +4,23 @@ import os
 import sys
 import subprocess
 
+DEFAULT_USER = {'antec': 'julie',
+                'wagner': 'melanie'}
+
 if len(sys.argv) > 1:
   user = sys.argv[1]
 else:
-  user = {'antec': 'julie',
-          'wagner': 'melanie'}.get(os.uname()[1])
+    # w / who / users are missing info (wtmp/utmp bug ?)
+    #active_users = set(subprocess.check_output(['users'], universal_newlines=True).split())
+    active_users = set()
+    for user in subprocess.check_output(['loginctl', '--no-legend', 'list-users'],
+                                          universal_newlines=True).splitlines():
+        active_users.add(user.split()[1])
+    for user in DEFAULT_USER.values():
+        if user in active_users:
+            break
+    else:
+        user = DEFAULT_USER.get(os.uname()[1])
 
 subprocess.check_call(['cp', '/home/%s/.config/google-chrome/Default/History' % user, '/tmp/'])
 
