@@ -1,12 +1,14 @@
 #!/bin/sh -e
 
-if hostname -I | grep -q '192\.168\.3\.'
-then
-	curl dd-wrt -s | grep WAN | grep -o -e '[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*'
-	exit 0
-fi
+#if hostname -I | grep -q '192\.168\.3\.'
+#then
+#       # this work only when someone is already connected to the admin website
+#       # login tho the website require a complexe POST procedure with a token variable
+#	curl voo/RgDhcp.asp -s | grep 'IPv4 Address' | grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'
+#	#curl dd-wrt -s | grep WAN | grep -o -e '[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*'
+#	exit 0
+#fi
 
 exec curl -s http://ssh.detiste.be/cgi-bin/my_ip.sh
-
-#exec wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
+exec dig +short myip.opendns.com @resolver1.opendns.com
 exec curl -s icanhazip.com
