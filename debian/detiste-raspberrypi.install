@@ -2,3 +2,4 @@ rpi/antec                           /usr/sbin
 rpi/shellinabox_import_from_certbot /usr/sbin
 rpi/shellinabox.conf                /lib/systemd/system/certbot.service.d
 rpi/my_ip.sh                        /var/www/cgi-bin
+rpi/time.sh                         /var/www/cgi-bin
