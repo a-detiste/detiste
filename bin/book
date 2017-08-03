@@ -1,0 +1,42 @@
+#!/bin/sh
+if [ $# -ne 1 ]
+then
+    echo "usage: book <package>"
+    exit 1
+fi
+
+available=$( LANG=C apt-cache policy $1 2>&1 | grep "Candidate" | grep -v "none" )
+if [ -n "$available" ]
+then
+    echo "Package already in archive"
+    exit 1
+fi
+
+deb="$1_0.0.1_all.deb"
+build=$(mktemp -d)
+cd $build
+cat > package << __EOF__
+Section: misc
+
+Package: $1
+Version: 0.0.1
+Description: pull the real thing when it exits NEW queue
+__EOF__
+
+equivs-build package
+
+if which sudo > /dev/null
+then
+  action="sudo dpkg -i $deb"
+else
+  action="su -c ""dpkg -i $deb"" "
+fi
+echo action:$action
+
+if false $action
+then
+  echo "success"
+  rm -rf $build
+else
+  echo ".deb kept in $build"
+fi
