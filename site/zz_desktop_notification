@@ -42,7 +42,7 @@ done;
 
 users=$(loginctl list-sessions | grep seat0 | grep -v sddm | awk '{print $3}')
 
-if [ -e /var/run/reboot-required -o -n "$grub" -o -n "$systemd" -o -n "$dbus" -o -n "$radeon" -o -n "$mesa" ]
+if [ -e /run/reboot-required -o -n "$grub" -o -n "$systemd" -o -n "$dbus" -o -n "$radeon" -o -n "$mesa" ]
 then
 	# check if user is active
 	if [ -n "$users" ]
