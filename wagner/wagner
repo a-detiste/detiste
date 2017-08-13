@@ -15,7 +15,7 @@ find /home/melanie/* ! -group detiste -ls -exec chgrp -h detiste {} \;
 # shared with apt-daily.{timer|service}
 /etc/site/0wait
 
-# first move mp3 to central repository
+# first move new mp3 to central repository
 rsync -rlpgotDixvm --remove-source-files --include='*.mp3' --include='*/' --exclude='*' /home/melanie/* melanie@antec:/home/mp3/0/melanie/
 
 # quick & dirty backup
@@ -32,4 +32,4 @@ rsync -rlpgotDixv -e ssh melanie@antec:/home/photos /home/ --delete --inplace
 
 # is it still up ?
 ping -qc 1 antec > /dev/null || exit 0
-rsync -rlpgotDixv -e ssh melanie@antec:/home/cover /home/ --delete --inplace
+rsync -rlpgotDixv -e ssh melanie@antec:/home/clips /home/ --delete --inplace
