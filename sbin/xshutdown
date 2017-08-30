@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+
+import os
+import subprocess
+
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
+
+window = Gtk.Window()
+window.set_default_size(90, 35)
+window.set_decorated(False)
+window.connect("delete_event", Gtk.main_quit)
+
+grid = Gtk.Grid()
+grid.set_row_spacing(5)
+grid.set_column_spacing(5)
+window.add(grid)
+
+def poweroff(event):
+    subprocess.call(['poweroff'])
+
+button = Gtk.Button(label="Poweroff")
+grid.attach(button, 0, 0, 1, 1)
+button.connect("clicked", poweroff)
+
+window.show_all()
+Gtk.main()

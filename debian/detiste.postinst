@@ -31,4 +31,20 @@ then
     fi
 fi
 
+if [ -e /etc/X11/default-display-manager ]
+then
+    dm=$(cat /etc/X11/default-display-manager)
+    if [ "$dm" = "/usr/bin/xdm" ]
+    then
+        if ! grep -q xshutdown /etc/X11/xdm/Xsetup
+        then
+            echo "xshutdown &" >> /etc/X11/xdm/Xsetup
+        fi
+        if ! grep -q xshutdown /etc/X11/xdm/Xstartup
+        then
+            echo "killall xshutdown" >> /etc/X11/xdm/Xstartup
+        fi
+    fi
+fi
+
 #DEBHELPER#
