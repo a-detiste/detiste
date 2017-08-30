@@ -42,6 +42,7 @@ then
         fi
         if ! grep -q xshutdown /etc/X11/xdm/Xstartup
         then
+            # bug: should be added at the top of the script
             echo "killall xshutdown" >> /etc/X11/xdm/Xstartup
         fi
     fi
