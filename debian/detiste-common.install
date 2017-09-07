@@ -1,4 +1,5 @@
 bin/*                   /usr/bin
 sbin/*                  /usr/sbin
 site/*                  /etc/site
+skel/                   /etc/
 common.list             /etc/apt/sources.list.d

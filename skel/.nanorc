@@ -1,0 +1,4 @@
+# for use with ShellInABox
+# because most browsers (versions)
+# will catch ^W by themselves
+bind ^F whereis main
