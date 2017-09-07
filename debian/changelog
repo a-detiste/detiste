@@ -2,6 +2,7 @@ detiste (38) UNRELEASED; urgency=medium
 
   * add Poweroff button for xdm
   * add .nanorc in /etc/skel/
+  * obsolete: print matching package name
 
  -- Alexandre Detiste <alexandre.detiste@gmail.com>  Wed, 30 Aug 2017 21:20:17 +0200
 

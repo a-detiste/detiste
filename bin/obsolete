@@ -1,2 +1,7 @@
 #!/bin/sh
-dpkg-query -W -f='${Conffiles}\n' | grep 'obsolete$' | sort
+FILES=$(dpkg-query -W -f='${Conffiles}\n' | grep 'obsolete$' | awk '{print $1}' | sort -u)
+
+for file in $FILES
+do
+    dpkg -S $file
+done
