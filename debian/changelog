@@ -1,10 +1,16 @@
-detiste (38) UNRELEASED; urgency=medium
+detiste (39) UNRELEASED; urgency=medium
+
+  * add SDDM icons
+
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Thu, 25 Jan 2018 14:05:11 +0100
+
+detiste (38) testing; urgency=medium
 
   * add Poweroff button for xdm
   * add .nanorc in /etc/skel/
   * obsolete: print matching package name
 
- -- Alexandre Detiste <alexandre.detiste@gmail.com>  Wed, 30 Aug 2017 21:20:17 +0200
+ -- Alexandre Detiste <alexandre.detiste@gmail.com>  Thu, 25 Jan 2018 14:04:58 +0100
 
 detiste (37) testing; urgency=medium
 
